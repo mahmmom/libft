@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 10:22:36 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/05 18:59:10 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 18:40:09 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char *ft_strchr(const char *s, int c)
 	char	*j;
 	
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		if (s[i] == c)
 		{
@@ -30,11 +30,11 @@ char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-#include<string.h>
+
 int main (void)
 {
 	const char s[] = "Luda";
-	int c = 'q';
+	int c = 'd';
 	
 	printf("%c\n", *ft_strchr(s, c));
 	//printf("%d\n", *strchr(s, c));

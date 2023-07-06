@@ -6,12 +6,11 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:43:28 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 18:24:02 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:32:17 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
@@ -28,12 +27,12 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-#include <string.h>
+/*#include <string.h>
 int	main(void)
 {
 	char	s[] = "Mohamed";
 	
-	int	c = '%';
+	int	c = '$';
 	
 	size_t len = 4;
 
@@ -42,4 +41,4 @@ int	main(void)
 	ft_memset(s, c, len);
 	
 	printf("My Memset: %s\n", s);
-}
+}*/

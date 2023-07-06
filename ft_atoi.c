@@ -6,11 +6,12 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 16:49:01 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 19:59:21 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:50:53 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 int	ft_atoi(const char *str)
 {
@@ -31,9 +32,16 @@ int	ft_atoi(const char *str)
 	}
 	while ((str[i] >= '0' && str[i] <= '9') && str[i])
 	{
-	result = (result * 10) + (str[i] - '0');
+	if (result > INT_MAX / 10
+            || (result == INT_MAX / 10 && str[i] - '0' > 7)) {
+            if (sign == 1)
+                return -1;
+            else
+                return 0;
+        }
+        result = 10 * result + (str[i] - '0');
 		i++;
-	}
+    }
 	return (sign * result);
 }
 

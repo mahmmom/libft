@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:23:52 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 13:42:34 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/05 21:27:34 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char *ft_strrchr(const char *s, int c)
 	return (NULL);
 }
 
-#include <string.h>
+
 int main (void)
 {
 	const char s[] = "Luaaalas";

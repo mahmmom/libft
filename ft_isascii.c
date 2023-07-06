@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:20:33 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/03 14:30:53 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 20:48:44 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main (void)
 	// int	b;
 	// int	g;
 	
-	c = 53745;
+	c = 55;
 
 
 	printf("%d\n", ft_isascii(c));

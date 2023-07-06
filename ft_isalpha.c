@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 11:43:18 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/03 12:03:54 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 20:46:48 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main (void)
 {
 	int c;
 	
-	c = 'o';
+	c = 'k';
 
 	printf("%d\n", ft_isalpha(c));
 }

@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:11:11 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 13:22:08 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/06 21:25:32 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
+	size_t	i;
 	size_t	j;
 	
 	i = ft_strlen(src);
@@ -30,16 +30,21 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (i);
 }
 
-#include <string.h>
 int main (void)
 {
-	const char s[] = "Mohamed";
-	char d[] = "HHH";
+	char s[] = "AAAAAAAAA";
+	char d[] = "";
+	char *ss = malloc(10);
+	for(int i = 0; i < 9; i++){
+		ss[i] = 'A';
+	}
+	char *dd = malloc(20);
 	size_t dstsize = 5;
+
 
 	printf("%zu\n", ft_strlcpy(d,s,dstsize));
 	printf("%s\n", d);
 	
-	printf("%zu\n", strlcpy(d,s,dstsize));
+	printf("%zu\n", strlcpy(dd,ss,dstsize));
 	printf("%s\n", d);
 }

@@ -13,7 +13,7 @@ void *ft_calloc(size_t nelem, size_t elsize)
 
 int main()
 {
-    int numEl = 10;
+    int numEl = 0;
     int elSize = sizeof(int);
     
     // Allocate memory for an array of 5 integers and initialize to zero
