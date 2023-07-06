@@ -1,16 +1,20 @@
-#include "libft.h"
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+
 char *ft_strdup(const char *s)
 {
-   char *duplic;
-   int  i;
+    char *duplic;
+    int i;
   
-   i = 0;
-   if (!(duplic = (char *)malloc(sizeof(char) * strlen(s) + 1)))
-   return(NULL);
-   while (*s)
-       duplic[i++] = *s++;
+    i = 0;
+    duplic = (char *)malloc(sizeof(char) * (strlen(s) + 1));
+    if (duplic == NULL)
+       return NULL;
+    while (*s)
+        duplic[i++] = *s++;
     duplic[i] = '\0';
-    return(duplic);
+    return duplic;
 }
 
 int main() 
@@ -23,6 +27,8 @@ int main()
     printf("The copied string is: %s\n", org);
     printf("The copied string is: %s\n", mine);
     
+    free(org);
+    free(mine);
     
     return 0;
 }
