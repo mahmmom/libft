@@ -12,21 +12,38 @@
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+size_t    ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	
+    size_t    i;
+    size_t    j;
+
+    i = 0;
+    j = 0;
+    while (i < dstsize && dst[i])
+    {
+        i++;
+    }
+    while ((i + j + 1) < dstsize && src[j])
+    {
+        dst[i + j] = src[j];
+        j++;
+    }
+    if (i != dstsize)
+    {
+        dst[i + j] = '\0';
+    }
+    return (i + strlen(src));
 }
 
-#include <string.h>
-int main (void)
+int main(void)
 {
-	const char s[] = "Mohamed";
-	char d[] = "HHH";
-	size_t size = 5;
+    char dest[20] = "Hello";
+    const char src[] = " World!";
+    unsigned int size = sizeof(dest);
 
-	printf("%zu\n", ft_strlcat(d,s,size));
-	printf("%s\n", d);
-	
-	printf("%zu\n", strlcat(d,s,size));
-	printf("%s\n", d);
+    printf("Initial dest: %s\n", dest);
+    printf("strlcat return value: %u\n", ft_strlcat(dest, src, size));
+    printf("Concatenated dest: %s\n", dest);
+
+    return 0;
 }
