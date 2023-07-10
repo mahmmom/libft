@@ -3,25 +3,27 @@
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
-    size_t    i;
-    size_t    j;
+    size_t    Scounter;
+    size_t    Subcounter;
     char    *substring;
-
+    
+    if (!s)
+		return (0);
     substring = (char*)malloc(sizeof(char) * (len + 1));
     if (!substring)
         return (NULL);
-    i = 0;
-    j = 0;
-    while (s[i])
+    Scounter = 0;
+    Subcounter = 0;
+    while (s[Scounter])
     {
-        if (i >= start && j < len)
+        if (Scounter >= start && Subcounter < len)
         {
-            substring[j] = s[i];
-            j++;
+            substring[Subcounter] = s[Scounter];
+            Subcounter++;
         }
-        i++;
+        Scounter++;
     }
-    substring[j] = 0;
+    substring[Subcounter] = 0;
     return (substring);
 }
 
