@@ -39,7 +39,21 @@ char **ft_split(const char *str, char delimiter) {
             }
             words_len = str - start;
             result[i] = (char *)malloc((words_len + 1) * sizeof(char));
-            strncpy(result[i], start, words_len);
+
+            /*char *word = result[i];
+            while (start < str) {
+                *word++ = *start++;
+            }
+            *word = '\0';
+            i++;
+        } else {
+            str++;
+        }
+    }*/
+            /*strncpy(result[i], start, words_len);*/
+
+            /*result[i] = strndup(start, word_length);*/
+            
             result[i][words_len] = '\0';
             i++;
         } else {
