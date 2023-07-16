@@ -25,7 +25,7 @@ int count_words(const char *str, char delimiter) {
 char *copy_word(const char *start, const char *end) {
     size_t word_len = end - start;
     char *word = (char *)malloc((word_len + 1) * sizeof(char));
-    strlcpy(word, start, word_len);
+    ft_strlcpy(word, start, word_len);
     word[word_len] = '\0';
     return word;
 }
