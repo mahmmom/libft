@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int count_words(const char *str, char delimiter) {
+static int count_words(const char *str, char delimiter) {
     int count;
     int if_word;
 
@@ -22,7 +22,7 @@ int count_words(const char *str, char delimiter) {
     return count;
 }
 
-char *copy_word(const char *start, const char *end) {
+static char *copy_word(const char *start, const char *end) {
     size_t word_len = end - start;
     char *word = (char *)malloc((word_len + 1) * sizeof(char));
     ft_strlcpy(word, start, word_len);
@@ -49,7 +49,7 @@ char **ft_split(const char *str, char delimiter) {
     return result;
 }
 
-void free_split(char **split) {
+static void free_split(char **split) {
     if (split) {
         char **ptr = split;
         while (*ptr) {
