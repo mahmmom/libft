@@ -2,19 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int count_words(const char *str, char delimiter) {
+static int count_words(const char *str, char delimiter)
+{
     int count;
     int if_word;
 
     count = 0;
     if_word = 0;
-    while (*str) {
-        if (*str != delimiter) {
-            if (!if_word) {
+    while (*str)
+    {
+        if (*str != delimiter)
+        {
+            if (!if_word)
+            {
                 if_word = 1;
                 count++;
             }
-        } else {
+        } else
+        {
             if_word = 0;
         }
         str++;
@@ -22,21 +27,29 @@ static int count_words(const char *str, char delimiter) {
     return count;
 }
 
-static char *copy_word(const char *start, const char *end) {
-    size_t word_len = end - start;
-    char *word = (char *)malloc((word_len + 1) * sizeof(char));
+static char *copy_word(const char *start, const char *end)
+{
+    size_t word_len;
+    char *word;
+
+    word_len = end - start;
+    word = (char *)malloc((word_len + 1) * sizeof(char));
     ft_strlcpy(word, start, word_len);
     word[word_len] = '\0';
     return word;
 }
 
 char **ft_split(const char *str, char delimiter) {
-    int words_counter = count_words(str, delimiter);
-    char **result = (char **)malloc((words_counter + 1) * sizeof(char *));
-    int i = 0;
+    int words_counter;
+    char **result;
+    int i;
 
+    words_len = count_words(str, delimiter);
+    result = (char **)malloc((words_counter + 1) * sizeof(char *));
+    i = 0;
     while (*str) {
-        if (*str != delimiter) {
+        if (*str != delimiter)
+        {
             const char *start = str;
             while (*str && *str != delimiter)
                 str++;
@@ -44,15 +57,17 @@ char **ft_split(const char *str, char delimiter) {
         }
         str++;
     }
-
     result[words_counter] = NULL;
     return result;
 }
 
-static void free_split(char **split) {
-    if (split) {
+static void free_split(char **split)
+{
+    if (split)
+    {
         char **ptr = split;
-        while (*ptr) {
+        while (*ptr)
+        {
             free(*ptr);
             ptr++;
         }
@@ -65,14 +80,15 @@ int main() {
     char delimiter = '$';
 
     char **split = ft_split(str, delimiter);
-    if (split) {
+    if (split)
+    {
         char **ptr = split;
-        while (*ptr) {
+        while (*ptr)
+        {
             printf("%s\n", *ptr);
             ptr++;
         }
         free_split(split);
     }
-
     return 0;
 }
