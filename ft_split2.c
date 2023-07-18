@@ -2,93 +2,94 @@
 #include <stdlib.h>
 #include <string.h>
 
-static int count_words(const char *str, char delimiter)
+static int	count_words(char const *str, char c)
 {
-    int count;
-    int if_word;
+	int count;
+	int i;
 
-    count = 0;
-    if_word = 0;
-    while (*str)
-    {
-        if (*str != delimiter)
-        {
-            if (!if_word)
-            {
-                if_word = 1;
-                count++;
-            }
-        } else
-        {
-            if_word = 0;
-        }
-        str++;
-    }
-    return count;
+	count = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != c)
+		{
+			count++;
+			while (str[i] && str[i] != c)
+				i++;
+		}
+		else
+			i++;
+	}
+	return (count);
 }
 
-static char *copy_word(const char *start, const char *end)
+static char	*get_next_word(char const **s, char c)
 {
-    size_t word_len;
-    char *word;
+	char	*word;
+	int		len;
+	int		i;
 
-    word_len = end - start;
-    word = (char *)malloc((word_len + 1) * sizeof(char));
-    ft_strlcpy(word, start, word_len);
-    word[word_len] = '\0';
-    return word;
+	len = 0;
+	while ((*s)[len] && (*s)[len] != c)
+		len++;
+	word = (char *)malloc(sizeof(char) * (len + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = (*s)[i];
+		i++;
+	}
+	word[i] = '\0';
+	*s += len;
+	return (word);
 }
 
-char **ft_split(const char *str, char delimiter) {
-    int words_counter;
-    char **result;
-    int i;
-
-    words_len = count_words(str, delimiter);
-    result = (char **)malloc((words_counter + 1) * sizeof(char *));
-    i = 0;
-    while (*str) {
-        if (*str != delimiter)
-        {
-            const char *start = str;
-            while (*str && *str != delimiter)
-                str++;
-            result[i++] = copy_word(start, str);
-        }
-        str++;
-    }
-    result[words_counter] = NULL;
-    return result;
-}
-
-static void free_split(char **split)
+char	**ft_split(char const *s, char c)
 {
-    if (split)
-    {
-        char **ptr = split;
-        while (*ptr)
-        {
-            free(*ptr);
-            ptr++;
-        }
-        free(split);
-    }
+	char	**result;
+	int		num_words;
+	int		i;
+
+	if (!s)
+		return (NULL);
+	num_words = count_words(s, c);
+	result = (char **)malloc(sizeof(char *) * (num_words + 1));
+	if (!result)
+		return (NULL);
+	i = 0;
+	while (i < num_words)
+	{
+		while (*s && *s == c)
+			s++;
+		result[i] = get_next_word(&s, c);
+		i++;
+	}
+	result[i] = NULL;
+	return (result);
 }
 
-int main() {
-    const char *str = "Mohamed$adil";
-    char delimiter = '$';
+int main()
+{
+    char const *str = "Split this string by spaces";
+    char **words = ft_split(str, ' ');
 
-    char **split = ft_split(str, delimiter);
-    if (split)
+    if (words)
     {
-        char **ptr = split;
-        while (*ptr)
+        int i = 0;
+        while (words[i])
         {
-            printf("%s\n", *ptr);
-            ptr++;
+            printf("Word %d: %s\n", i + 1, words[i]);
+            free(words[i]);
+            i++;
         }
-        free_split(split);
+        free(words);
     }
+    else
+    {
+        printf("Error: ft_split returned NULL.\n");
+    }
+
     return 0;
 }
