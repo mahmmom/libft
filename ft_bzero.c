@@ -6,12 +6,11 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:12:13 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 18:24:57 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:44:02 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -27,18 +26,14 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 
-#include <string.h>
-int	main(void)
-{
-	char	s[] = "Mohamed";
+// #include <string.h>
+// int	main(void)
+// {
+// 	char	s[] = "Mohamed";
+// 	size_t n = 3;
 
-	size_t n = 3;
-
-	bzero(s, n);
-	
-	printf("Original bzero: %s\n", s);
-	
-	ft_bzero(s, n);
-	
-	printf("My bzero: %s\n", s);
-}
+// 	bzero(s, n);
+// 	printf("Original bzero: %s\n", s);
+// 	ft_bzero(s, n);	
+// 	printf("My bzero: %s\n", s);
+// }

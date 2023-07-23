@@ -6,58 +6,45 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:46:08 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/05 18:46:50 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:56:53 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*p;
-	char	*q;
+	char	*temp;
+	char	*ft_dest;
 
-	i = 0;
-	p = (char *)src;
-	q = (char *)dest;
-	if (s) {
-	
-	}
-	while (i < n)
+	temp = (char *)src;
+	ft_dest = (char *)dest;
+	if (temp < ft_dest)
 	{
-		p[i] = q[i];
-		i++;
+		while (n--)
+		{
+			ft_dest[n] = temp[n];
+		}
 	}
-	return (q);
+	else
+	{
+		ft_memcpy(ft_dest, temp, n);
+	}
+	return (dest);
 }
 
-int	main(void)
-{
-	char src[] = "AAA";
-	char dst[] = "zz";
+/*int main() {
+    char source[] = "A BC D EFGHIJ";
 
-	printf("source before: %s\n", src);
-	printf("dst before: %s\n", dst);
-	
-	printf("-------------------------\n");
+    char *org = memcpy(source+2, source, sizeof(char) * 5);
 
-	memmove(dst, src, 3);
+    printf("String: %s\n", org);
+	
+	char source2[] = "A BC D EFGHIJ";
 
-	printf("source after: %s\n", src);
-	printf("dst after: %s\n", dst);
-	
-	printf("=========================\n");
-	printf("=========================\n");
-	
-	printf("MY source before: %s\n", src);
-	printf("MY dst before: %s\n", dst);
-	
-	printf("-------------------------\n");
-	
-	ft_memmove(dst, src, 2);
+	char *mine = ft_memmove(source2+2, source2, sizeof(char) * 5);
 
-	printf("MY source after: %s\n", src);
-	printf("MY dst after: %s\n", dst);
-}
+    printf("String: %s\n", mine);
+
+    return 0;
+}*/

@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 18:25:50 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/05 18:33:28 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:55:41 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,49 +15,36 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t	i;
-	char	*p;
-	char	*q;
+	char	*ft_src;
+	char	*ft_dest;
 
 	i = 0;
-	p = (char *)src;
-	q = (char *)dest;
+	if (!dest && !src)
+		return (NULL);
+	ft_src = (char *)src;
+	ft_dest = (char *)dest;
 	while (i < n)
 	{
-		p[i] = q[i];
+		ft_dest[i] = ft_src[i];
 		i++;
 	}
-	return (q);
+	return (dest);
 }
 
-int	main(void)
+/*int main()
 {
-	char src[] = "AAAA";
-	char dst[] = "zz";
+    char source[] = "I love 42";
+    char destination[20];
 
-	char src1[] = "AAAA";
-	char dst1[] = "zz";
+    memmove(destination+2, source, strlen(source) + 1);
 
-	printf("source before: %s\n", src);
-	printf("dst before: %s\n", dst);
-	
-	printf("-------------------------\n");
+    printf("String: %s\n", source);
+    printf("destination: %s\n", destination);
 
-	memcpy(dst, src, 3);
+	ft_memmove(destination+2, source, strlen(source + 1));
 
-	printf("source after: %s\n", src);
-	printf("dst after: %s\n", dst);
-	
-	printf("=========================\n");
-	printf("=========================\n");
-	
-	printf("MY source before: %s\n", src1);
-	printf("MY dst before: %s\n", dst1);
-	
-	printf("-------------------------\n");
-	
-	ft_memcpy(dst1, src1, 3);
+    printf("String: %s\n", source);
+    printf("destination: %s\n", destination);
 
-	printf("MY source after: %s\n", src1);
-	printf("MY dst after: %s\n", dst1);
-	
-}
+    return 0;
+}*/

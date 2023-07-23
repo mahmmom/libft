@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 14:51:16 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/06 20:51:29 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:06:12 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *s)
 	{
 		i++;
 	}
-	return (i);	
+	return (i);
 }
 
 /*int main (void)

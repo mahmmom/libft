@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 17:43:28 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/06 21:32:17 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 20:57:08 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,14 @@ void	*ft_memset(void *b, int c, size_t len)
 	return (b);
 }
 
-/*#include <string.h>
-int	main(void)
-{
-	char	s[] = "Mohamed";
-	
-	int	c = '$';
-	
-	size_t len = 4;
+// #include <string.h>
+// int	main(void)
+// {
+// 	char	s[] = "Mohamed";
+// 	int	c = '$';
+// 	size_t len = 4;
 
-	printf("Original Memset: %s\n", memset(s, c, len));
-	
-	ft_memset(s, c, len);
-	
-	printf("My Memset: %s\n", s);
-}*/
+// 	printf("Original Memset: %s\n", memset(s, c, len));
+// 	char *k = ft_memset(s, c, len);
+// 	printf("My Memset: %s\n", k);
+// }

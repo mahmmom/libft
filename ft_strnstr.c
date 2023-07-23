@@ -6,7 +6,7 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 13:48:18 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/06 18:12:13 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/12 19:57:03 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,21 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (i < len && haystack[i])
 	{
 		j = 0;
-		while (needle[j] != '\0' && haystack[i + j] != '\0' && needle[j] == haystack[i + j])
-		{
+		while (i + j < len && needle[j] != '\0' 
+			&& haystack[i + j] != '\0' && needle[j] == haystack[i + j])
 			j++;
-		}
 		if (needle[j] == '\0')
 			return ((char *)&haystack[i]);
 		i++;
-		
 	}
 	return (NULL);
 }
 
-int main(void)
+/*int main(void)
 {
-    const char haystack[] = "world! world!";
-    const char needle[] = "ld";
-    size_t len = 5;
+    const char haystack[] = "ABC";
+    const char needle[] = "C";
+    size_t len = strlen(needle);
 
     char *result = strnstr(haystack, needle, len);
 
@@ -56,4 +54,15 @@ int main(void)
         printf("Needle not found.\n");
 
     return 0;
-}
+}*/
+
+/*int main(void)
+{
+   char    *s1 = "MZIRIBMZIRIBMZE123";
+            char    *s2 = "MZIRIBMZE";
+            size_t    max = strlen(s2);
+
+            char    *i2 = ft_strnstr(s1, s2, max);
+
+			printf("%s\n", i2);
+}*/

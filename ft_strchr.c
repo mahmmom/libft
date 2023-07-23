@@ -6,36 +6,37 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 10:22:36 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/06 18:40:09 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 22:25:54 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	i;
-	char	*j;
-	
+	char	car;
+	int		i;
+	char	*str;
+
 	i = 0;
-	while (s[i] != '\0')
+	str = (char *)s;
+	car = (char)c;
+	while (str[i])
 	{
-		if (s[i] == c)
-		{
-			j = (char *)&s[i];
-			return (j);
-		}
-	i++;
+		if (str[i] == car)
+			return (&str[i]);
+		i++;
 	}
-	return (NULL);
+	if (car == '\0')
+		return (&str[i]);
+	return (0);
 }
 
-
-int main (void)
+/*int main (void)
 {
-	const char s[] = "Luda";
-	int c = 'd';
+	const char s[] = "tripouille";
+	// int c = 't';
 	
-	printf("%c\n", *ft_strchr(s, c));
-	//printf("%d\n", *strchr(s, c));
-}
+	printf("%s\n", ft_strchr(s, 't' + 256));
+	printf("%s\n", strchr(s, 't' + 256));
+}*/

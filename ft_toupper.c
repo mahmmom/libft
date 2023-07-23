@@ -6,23 +6,22 @@
 /*   By: mohamoha <mohamoha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 15:21:43 by mohamoha          #+#    #+#             */
-/*   Updated: 2023/07/04 09:58:04 by mohamoha         ###   ########.fr       */
+/*   Updated: 2023/07/18 21:39:16 by mohamoha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-	c = c - 32;
-return (c);
+		c = c - 32;
+	return (c);
 }
 
-#include<stdio.h>
-int main (void)
-{
-	int	c;
+// #include<stdio.h>
+// int main (void)
+// {
+// 	int	c;
 
-	c = 'e';
-	
-	printf("%d\n", ft_toupper(c));
-}
+// 	c = 'e';
+// 	printf("%d\n", ft_toupper(c));
+// }
